@@ -241,7 +241,7 @@ body {
 
   <!-- PAGE 1: scratch card, revealing Page2 image underneath -->
 <section class="screen active" id="page1">
-<img class="bg reveal-bg" src="./images/Page2.jpeg" alt="">
+<img class="bg reveal-bg" src="./images/page2.jpeg" alt="">
 
   <div class="page1-text" id="page1Text"></div>
 
@@ -353,11 +353,11 @@ scratchImage.onload = () => {
 };
 
 scratchImage.onerror = () => {
-  console.error("Page1.jpeg did not load. Check filename exactly.");
+  console.error("page1.jpeg did not load. Check filename exactly.");
   canvas.style.opacity = "1";
 };
 
-scratchImage.src = "./images/Page1.jpeg";
+scratchImage.src = "./images/page1.jpeg";
   let isDrawing = false;
 
   const heartArea = {
