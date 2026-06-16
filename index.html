@@ -340,11 +340,10 @@ function setupScratch() {
 
   ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 
-  const scratchImage = new Image();
-  scratchImage.src = "./images/Page1.jpeg";
-	canvas.style.opacity = "0";
+ const scratchImage = new Image();
+canvas.style.opacity = "0";
 
-  scratchImage.onload = () => {
+scratchImage.onload = () => {
   ctx.drawImage(scratchImage, 0, 0, rect.width, rect.height);
   ctx.globalCompositeOperation = "destination-out";
   canvas.style.background = "transparent";
@@ -353,6 +352,12 @@ function setupScratch() {
   document.getElementById("page1").classList.add("scratch-ready");
 };
 
+scratchImage.onerror = () => {
+  console.error("Page1.jpeg did not load. Check filename exactly.");
+  canvas.style.opacity = "1";
+};
+
+scratchImage.src = "./images/Page1.jpeg";
   let isDrawing = false;
 
   const heartArea = {
